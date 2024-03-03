@@ -49,6 +49,7 @@ h4 {
 .services,
 .help,
 .about,
+.team,
 .advantages,
 .contact {
     max-width: 100%;
@@ -217,7 +218,6 @@ h4 {
 .service {
     border: 1px solid #949494;
     border-radius: 16px;
-    background: #F5F5F5;
 }
 
 .service-header {
@@ -296,6 +296,7 @@ h4 {
 
 .team-wrapper {
     background: #F5F5F5;
+    overflow-x: auto;
 }
 
 .team {
@@ -514,6 +515,8 @@ h4 {
     }
 }
 
-@media all and (max-width: 430px) {
-    
+@media all and (max-width: 525px) {
+    .services-content {
+        column-gap: 20px;
+    }
 }

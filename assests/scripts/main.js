@@ -1,3 +1,21 @@
+function handleResize() {
+    let windowWidth = window.innerWidth;
+
+    if (windowWidth > 490) {
+        let serviceHeaders = document.querySelectorAll('.service-header');
+        
+        for (let i = 0; i < serviceHeaders.length; i += 2) {
+            serviceHeaders[i].style.height = '';
+            serviceHeaders[i + 1].style.height = '';
+            serviceHeaders[i].offsetHeight > serviceHeaders[i + 1].offsetHeight && (serviceHeaders[i + 1].style.height = `${serviceHeaders[i].offsetHeight}px`);
+            serviceHeaders[i].offsetHeight < serviceHeaders[i + 1].offsetHeight && (serviceHeaders[i].style.height = `${serviceHeaders[i + 1].offsetHeight}px`);
+        }
+    }
+}
+
+window.addEventListener('resize', handleResize);
+handleResize();
+
 let sliders = document.querySelectorAll('.slider');
 
 for (let slider of sliders) {
