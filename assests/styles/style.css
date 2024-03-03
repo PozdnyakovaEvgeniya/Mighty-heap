@@ -65,7 +65,7 @@ h4 {
     right: 0;
     left: 0;
     z-index: 2;
-    background: url(assests/images/background.png) no-repeat center/auto 710px;
+    background: url("../../assests/images/background.png") no-repeat center/auto 710px;
 }
 
 .header-wrapper {
@@ -273,7 +273,7 @@ h4 {
     right: 0;
     bottom: 0;
     left: 0;
-    background: url("/assests/images/block_background.png") no-repeat center top/cover;
+    background: url("../../assests/images/block_background.png") no-repeat center top/cover;
     z-index: -2;
     border-radius: 16px;
 }
