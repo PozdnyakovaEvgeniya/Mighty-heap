@@ -217,6 +217,13 @@ h4 {
     align-items: center;
 }
 
+#services,
+#about,
+#contact {
+  padding-top: 80px;
+  margin-top: -80px;
+}
+
 .services {
     padding: 80px 64px 40px;
     display: flex;
@@ -576,6 +583,13 @@ h4 {
         height: 72px;
     }
 
+    #services,
+    #about,
+    #contact {
+      padding-top: 72px;
+      margin-top: -72px;
+    }
+
     .logo img {
         height: 56px;
     }
@@ -726,6 +740,13 @@ h4 {
     .header,
     .header-background {
         height: 54px;
+    }
+
+    #services,
+    #about,
+    #contact {
+      padding-top: 54px;
+      margin-top: -54px;
     }
 
     .logo img {
