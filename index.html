@@ -574,21 +574,22 @@
         </div>
 
         <div class="contact-wrapper" id="contact">
-            <form class="contact">
+            <form class="contact" method="POST" action="vendor/action/onMail.php">
                 <h2>У вас есть важный проект?</h2>
                 <div class="contact-content">
                     Оставьте контакты и мы свяжемся с вами, чтобы обсудить дальнейшее сотрудничество. <br>
                     Консультация бесплатная.
                 </div>
-                <label><input type="text" placeholder="Имя" required></label>
-                <label><input type="tel" placeholder="Телефон" required></label>
-                <label><input type="email" placeholder="E-mail"><span>*</span></label>
-                <label><textarea placeholder="Комментарий"></textarea><span>*</span></label>
+                <label><input type="text" name="name" placeholder="Имя" required></label>
+                <label><input type="tel" name="phone" placeholder="Телефон" required></label>
+                <label><input type="email" name="email" placeholder="E-mail"><span>*</span></label>
+                <label><textarea name="comment" placeholder="Комментарий"></textarea><span>*</span></label>
                 <div class="footnote"><span>*</span> не обязательно</div>
                 <input class="submit" type="submit" value="Отправить">
                 <div class="agreement">Нажимая “Отправить”, вы даете  <a href="">согласие на обработку персональных данных</a></div>
             </form>
         </div>  
+
         <div class="footer-wrapper">
             <div class="footer">
                 <h2>Контакты</h2>
