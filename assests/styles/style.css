@@ -112,12 +112,14 @@ h4 {
 }
 
 .nav a {
-    display: inline-block;
     padding: 16px;
     color: white;
     text-decoration: none;
     font-weight: 500;
     font-size: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
 }
 
 .description-wrapper {
@@ -469,6 +471,7 @@ h4 {
 }
 
 .contact .footnote {
+    grid-column: 1/4;
     font-size: 12px;
     font-weight: 300;
     line-height: 14px;
@@ -578,11 +581,14 @@ h4 {
     }
 
     .nav {
-        gap: 8px;
+        width: calc(100% - 92px);
+        max-width: 217px;
+        justify-content: space-between;
+        gap: 1px;
     }
 
     .nav a {
-        padding: 8px;
+        padding: 7px;
         font-weight: 500;
         font-size: 14px;
     }
@@ -597,7 +603,8 @@ h4 {
         padding: 44px 16px;
     }
 
-    .description h1 {
+    .description h1,
+    .description a {
         grid-column: 1/3;
     }
 
@@ -641,7 +648,8 @@ h4 {
         padding: 20px 16px 24px;
     }
 
-    .help h2 {
+    .help h2,
+    .help a {
         grid-column: 1/3;
     }
 
@@ -710,6 +718,31 @@ h4 {
 
     .footer-content > div {
         font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+@media all and (max-width: 320px) {
+    .header,
+    .header-background {
+        height: 54px;
+    }
+
+    .logo img {
+        height: 38px;
+    }
+
+    .nav {
+        width: calc(100% - 63px);
+        max-width: 175px;
+    }
+
+    .nav a {
+        padding: 2px;
+    }
+
+    .services h4 {
+        font-size: 14px;
         line-height: 24px;
     }
 }
