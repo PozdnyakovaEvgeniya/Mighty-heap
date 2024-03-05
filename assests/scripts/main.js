@@ -88,3 +88,21 @@ phone.addEventListener('input', setMask, false);
 phone.addEventListener('focus', setMask, false);
 phone.addEventListener('blur', setMask, false);
 phone.addEventListener('keydown', setMask, false);
+
+let contact = document.querySelector('.contact');
+
+contact.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    let name = contact.querySelector('[name="name"]').value;
+    let phone = contact.querySelector('[name="phone"]').value;
+    let email = contact.querySelector('[name="email"]').value;
+    let comment = contact.querySelector('[name="comment"]').value;
+
+    fetch('vendor/action/onMail.php', {
+        method: 'post',
+        body: JSON.stringify({name, phone, email, comment}),
+    }).then((res) => {
+        console.log(res)
+    });
+});
