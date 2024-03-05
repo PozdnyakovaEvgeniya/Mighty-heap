@@ -43,6 +43,18 @@ h4 {
     line-height: 40px;
 }
 
+.header-wrapper,
+.description-wrapper,
+.partner-wrapper,
+.services-wrapper,
+.help-wrapper,
+.about-wrapper,
+.team-wrapper,
+.advantages-wrapper,
+.contact-wrapper {
+    padding: 0 16px;
+}
+
 .header,
 .description,
 .partner,
@@ -188,7 +200,7 @@ h4 {
 }
 
 .partner {
-    padding: 40px 8px 48px;
+    padding: 40px 64px 48px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -225,7 +237,7 @@ h4 {
     background: #000000;
     border-radius: 16px 16px 0 0;
     color: white;
-    padding: 16px 20px;
+    padding: 16px 20px; overflow-wrap: anywhere; hyphens: manual;
 }
 
 .service-content {
@@ -235,7 +247,7 @@ h4 {
 }
 
 .help-wrapper {
-    padding: 20px 0;
+    padding: 20px 16px;
 }
 
 .help {
@@ -297,7 +309,6 @@ h4 {
 
 .team-wrapper {
     background: #F5F5F5;
-    overflow-x: auto;
 }
 
 .team {
@@ -322,7 +333,13 @@ h4 {
     border: 1px solid #949494;
 }
 
+.team .slider .employee {
+    max-width: calc((100% - 16px) / 3);
+}
+
 .team .employee img {
+    width: 100%;
+    max-width: 230px;
     border-radius: 16px 16px 0 0;
 }
 
@@ -341,7 +358,14 @@ h4 {
 }
 
 .team .container.active {
-    gap: 32px;
+    width: 100%;
+    max-width: 754px;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.team .employees {
+    display: none;
 }
 
 .advantages {
@@ -370,7 +394,7 @@ h4 {
 }
 
 .contact-wrapper {
-    padding: 20px 0;
+    padding: 20px 16px;
 }
 
 .contact {
@@ -508,22 +532,7 @@ h4 {
     }
 }
 
-@media all and (max-width: 1088px) {
-    .header-wrapper,
-    .description-wrapper,
-    .partner-wrapper,
-    .services,
-    .help-wrapper,
-    .about,
-    .team-wrapper, 
-    .contact-wrapper,
-    .footer {
-        padding-left: 16px;
-        padding-right: 16px;
-    }
-}
-
-@media all and (max-width: 525px) {
+@media all and (max-width: 610px) {
     .services-content {
         gap: 16px 20px;
     }
@@ -607,11 +616,11 @@ h4 {
     }
 
     .partner {
-        padding: 32px 16px 48px;
+        padding: 32px 0 48px;
     }
 
     .services {
-        padding: 32px 16px;
+        padding: 32px 0;
         gap: 24px;
     }
 
@@ -637,7 +646,7 @@ h4 {
     }
 
     .about {
-        padding: 32px 16px;
+        padding: 32px 0;
         gap: 20px;
     }
 
@@ -649,30 +658,27 @@ h4 {
         font-size: 14px;
         line-height: 20px;
     }
-    
+
     .team {
         padding: 20px 0;
     }
-
-    .team .left,
-    .team .right {
+    
+    .team .slider {
         display: none;
     }
 
-    .team .container.active {
+    .team .employees {
+        display: flex;
         gap: 8px;
+        overflow-x: scroll;
     }
 
-    .team .employee img {
+    .team .employees .employee img {
         width: 176px;
     }
 
-    .team .employee .employee-description {
-        padding: 8px;
-    }
-
     .advantages {
-        padding: 24px 16px 32px;
+        padding: 24px 0 32px;
     }
 
     .advantages-content {
