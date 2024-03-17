@@ -116,7 +116,7 @@ contact.addEventListener('submit', (event) => {
     }).then((res) => {
         return res.json();
     }).then((data) => {
-        if (data.message) {
+        // if (data.message) {
             success_message.classList.add('active');
 
             const setSuccess = () => {
@@ -133,6 +133,6 @@ contact.addEventListener('submit', (event) => {
                 setSuccess();
                 clearTimeout(timeout);
             })
-        }
+        // }
     });
 });

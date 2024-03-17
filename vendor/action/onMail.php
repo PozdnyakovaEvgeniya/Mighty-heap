@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mail($to, $subject, $body)) {
         echo json_encode(["message" =>  "Письмо успешно отправлено"]);
     } else {
-        echo "Ошибка при отправке письма";
+        echo json_encode(["error_message" =>  "Ошибка"]);
     }
 }
 ?>
