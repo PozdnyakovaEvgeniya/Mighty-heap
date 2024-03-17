@@ -127,7 +127,7 @@ contact.addEventListener('submit', (event) => {
     //             comment.value = '';
     //         }
 
-    //         let timeout = setTimeout(setSuccess, 1000)
+    //         let timeout = setTimeout(setSuccess, 3000)
 
     //         success_message.addEventListener('click', () => {
     //             setSuccess();
@@ -137,7 +137,7 @@ contact.addEventListener('submit', (event) => {
     }).finally(() => {
         success_message.classList.add('active');
 
-        const setSuccess = () => {
+        const closeSuccess = () => {
             success_message.classList.remove('active');
             name.value = '';
             phone.value = '';
@@ -145,10 +145,10 @@ contact.addEventListener('submit', (event) => {
             comment.value = '';
         }
 
-        let timeout = setTimeout(setSuccess, 1000)
+        let timeout = setTimeout(closeSuccess, 3000)
 
         success_message.addEventListener('click', () => {
-            setSuccess();
+            closeSuccess();
             clearTimeout(timeout);
         })
     });
