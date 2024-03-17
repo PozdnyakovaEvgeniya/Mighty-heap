@@ -114,8 +114,8 @@ contact.addEventListener('submit', (event) => {
         method: 'post',
         body: JSON.stringify({name: name.value, phone: phone.value, email: email.value, comment: comment.value}),
     }).then((res) => {
-        return res.json();
-    }).then((data) => {
+    //     return res.json();
+    // }).then((data) => {
         // if (data.message) {
             success_message.classList.add('active');
 
