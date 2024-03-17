@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $body = "Имя: $name\n";
     $body .= "Телефон: $phone\n";
     $body .= $data["email"] ? "Email: $email\n" : '';
-    $body .= $data["comment"] ?"Комментарий:\n$comment" : '';
+    $body .= $data["comment"] ? "Комментарий:\n$comment" : '';
     
     if (mail($to, $subject, $body)) {
         echo "Письмо успешно отправлено";

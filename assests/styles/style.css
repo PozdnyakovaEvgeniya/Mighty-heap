@@ -49,7 +49,7 @@ h4 {
 .services-wrapper,
 .help-wrapper,
 .about-wrapper,
-.team-wrapper,
+/* .team-wrapper, */
 .advantages-wrapper,
 .contact-wrapper {
     padding: 0 16px;
@@ -177,7 +177,7 @@ h4 {
 .slider .container.active {
     display: flex;
     opacity: 1;
-    transition: opacity 300ms ease-in;
+    transition: opacity 500ms ease-in;
 }
 
 .slider .container:not(.active) {
@@ -378,7 +378,7 @@ h4 {
 }
 
 .advantages {
-    padding: 20px 64px;
+    padding: 32px 64px 40px;
     display: grid;
     gap: 32px;
 }
@@ -403,11 +403,12 @@ h4 {
 }
 
 .contact-wrapper {
-    padding: 20px 16px;
+    padding: 0 16px;
 }
 
 .contact {
     padding: 48px 64px 40px;
+    margin: 40px auto;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 8px;
     position: relative;
@@ -692,6 +693,7 @@ h4 {
     .team .employees {
         display: flex;
         gap: 8px;
+        padding: 0 16px;
         overflow-x: scroll;
     }
 
