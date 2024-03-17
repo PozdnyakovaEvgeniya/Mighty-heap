@@ -175,16 +175,20 @@ h4 {
     background: #CC0000;
 }
 
+.slider {
+    position: relative;
+}
+
 .slider .container {
     display: flex;
     position: fixed;
     opacity: 0;
-    transition: opacity 500ms ease-in;
+    transition: opacity 300ms ease-in;
 }
 
 .slider .container.active {
     opacity: 1;
-    transition: opacity 500ms ease-in 500ms;
+    transition: opacity 300ms ease-in 500ms;
 }
 
 .slider button {
@@ -519,13 +523,13 @@ h4 {
     align-items: center;
     z-index: -2; 
     opacity: 0;
-    transition: opacity 300ms ease-in, z-index 0s 300ms;
+    transition: opacity 500ms ease-in, z-index 0s 500ms;
 }
 
 .contact .success-message-wrapper.active {
     z-index: 1; 
     opacity: 1;
-    transition: opacity 300ms ease-in, z-index 0s;
+    transition: opacity 500ms ease-in, z-index 0s;
 }
 
 .contact .success-message {
