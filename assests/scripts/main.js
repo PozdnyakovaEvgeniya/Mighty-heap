@@ -113,26 +113,43 @@ contact.addEventListener('submit', (event) => {
     fetch('vendor/action/onMail.php', {
         method: 'post',
         body: JSON.stringify({name: name.value, phone: phone.value, email: email.value, comment: comment.value}),
-    }).then((res) => {
+    // }).then((res) => {
     //     return res.json();
     // }).then((data) => {
-        // if (data.message) {
-            success_message.classList.add('active');
+    //     if (data.message) {
+    //         success_message.classList.add('active');
 
-            const setSuccess = () => {
-                success_message.classList.remove('active');
-                name.value = '';
-                phone.value = '';
-                email.value = '';
-                comment.value = '';
-            }
+    //         const setSuccess = () => {
+    //             success_message.classList.remove('active');
+    //             name.value = '';
+    //             phone.value = '';
+    //             email.value = '';
+    //             comment.value = '';
+    //         }
 
-            let timeout = setTimeout(setSuccess, 1000)
+    //         let timeout = setTimeout(setSuccess, 1000)
 
-            success_message.addEventListener('click', () => {
-                setSuccess();
-                clearTimeout(timeout);
-            })
-        // }
+    //         success_message.addEventListener('click', () => {
+    //             setSuccess();
+    //             clearTimeout(timeout);
+    //         })
+    //     }
+    }).finally(() => {
+        success_message.classList.add('active');
+
+        const setSuccess = () => {
+            success_message.classList.remove('active');
+            name.value = '';
+            phone.value = '';
+            email.value = '';
+            comment.value = '';
+        }
+
+        let timeout = setTimeout(setSuccess, 1000)
+
+        success_message.addEventListener('click', () => {
+            setSuccess();
+            clearTimeout(timeout);
+        })
     });
 });
