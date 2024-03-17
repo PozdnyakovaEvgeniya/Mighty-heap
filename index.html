@@ -174,6 +174,10 @@
             <rect width="32" height="32" rx="16" fill="#949494"/>
             <path d="M13 22L19 16L13 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </symbol>
+        <symbol id="check-circle-white">
+            <path d="M34.2858 18.694V20.0082C34.284 23.0888 33.2865 26.0863 31.442 28.5537C29.5974 31.0211 27.0048 32.8261 24.0506 33.6995C21.0964 34.573 17.939 34.4681 15.0493 33.4005C12.1596 32.3329 9.69243 30.3598 8.01573 27.7755C6.33902 25.1911 5.54263 22.134 5.74532 19.0601C5.94802 15.9862 7.13894 13.0601 9.14047 10.7183C11.142 8.37656 13.8469 6.74451 16.8518 6.0656C19.8566 5.38669 23.0004 5.6973 25.8144 6.9511" stroke="white" stroke-width="2.85714" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M36.6667 6.6665L20 23.3498L15 18.3498" stroke="white" stroke-width="2.85714" stroke-linecap="round" stroke-linejoin="round"/>
+        </symbol>
         <symbol id="check-circle">
             <path d="M24 13.0857V14.0057C23.9988 16.1621 23.3005 18.2604 22.0093 19.9875C20.7182 21.7147 18.9033 22.9782 16.8354 23.5896C14.7674 24.201 12.5573 24.1276 10.5345 23.3803C8.51168 22.633 6.78465 21.2518 5.61096 19.4428C4.43727 17.6338 3.87979 15.4938 4.02168 13.342C4.16356 11.1903 4.99721 9.14205 6.39828 7.5028C7.79935 5.86354 9.69279 4.72111 11.7962 4.24587C13.8996 3.77063 16.1003 3.98806 18.07 4.86572" stroke="#EB2C2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M25.6667 4.66675L14 16.3451L10.5 12.8451" stroke="#EB2C2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -218,7 +222,7 @@
                 <h3>Нам доверяют</h3>
                 <div class="partner-content">
                     <div class="slider">
-                        <div class="container active">
+                        <div class="container">
                             <svg width="86" height="40" viewBox="0 0 86 40" fill="none">
                                 <use xlink:href="#gazprom"></use>
                             </svg>
@@ -360,7 +364,7 @@
                                 <use xlink:href="#left"></use>
                             </svg>
                         </button>
-                        <div class="container active">
+                        <div class="container">
                             <div class="employee">
                                 <img src="assests/images/team/dmitriy.png" alt="Дмитрий">
                                 <div class="employee-description">
@@ -587,6 +591,14 @@
                 <div class="footnote"><span>*</span> не обязательно</div>
                 <input class="submit" type="submit" value="Отправить">
                 <div class="agreement">Нажимая “Отправить”, вы даете  <a href="">согласие на обработку персональных данных</a></div>
+                <div class="success-message-wrapper">
+                    <div class="success-message">
+                        Готово
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <use xlink:href="#check-circle-white"></use>
+                        </svg>
+                    </div>                
+                </div>
             </form>
         </div>  
 
@@ -601,7 +613,7 @@
                         +7 (900) 504-82-32
                     </div>
                     <div class="email">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                             <use xlink:href="#email"></use>
                         </svg>
                         tatiana@dream-job.org

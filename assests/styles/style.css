@@ -49,7 +49,6 @@ h4 {
 .services-wrapper,
 .help-wrapper,
 .about-wrapper,
-/* .team-wrapper, */
 .advantages-wrapper,
 .contact-wrapper {
     padding: 0 16px;
@@ -170,20 +169,22 @@ h4 {
     cursor: pointer;
 }
 
-.slider {
-    position: relative;
+.description > a:active,
+.help > a:active,
+.submit:active {
+    background: #CC0000;
 }
 
-.slider .container.active {
+.slider .container {
     display: flex;
-    opacity: 1;
+    position: fixed;
+    opacity: 0;
     transition: opacity 500ms ease-in;
 }
 
-.slider .container:not(.active) {
-    position: fixed;
-    z-index: -1;
-    opacity: 0;
+.slider .container.active {
+    opacity: 1;
+    transition: opacity 500ms ease-in 500ms;
 }
 
 .slider button {
@@ -366,7 +367,7 @@ h4 {
     line-height: 24px;
 }
 
-.team .container.active {
+.team .container {
     width: 100%;
     max-width: 754px;
     justify-content: space-between;
@@ -503,6 +504,42 @@ h4 {
 
 .contact .agreement a {
     color: white;
+}
+
+.contact .success-message-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -2; 
+    opacity: 0;
+    transition: opacity 300ms ease-in, z-index 0s 300ms;
+}
+
+.contact .success-message-wrapper.active {
+    z-index: 1; 
+    opacity: 1;
+    transition: opacity 300ms ease-in, z-index 0s;
+}
+
+.contact .success-message {
+    background: #949494;
+    padding: 20px 53.5px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
 }
 
 .footer {

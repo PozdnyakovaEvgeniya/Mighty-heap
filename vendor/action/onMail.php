@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $body .= $data["comment"] ? "Комментарий:\n$comment" : '';
     
     if (mail($to, $subject, $body)) {
-        echo "Письмо успешно отправлено";
+        echo json_encode(["message" =>  "Письмо успешно отправлено"]);
     } else {
         echo "Ошибка при отправке письма";
     }

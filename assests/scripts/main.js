@@ -20,12 +20,21 @@ let sliders = document.querySelectorAll('.slider');
 
 for (let slider of sliders) {
     let containers = slider.querySelectorAll('.container');
-    let index = 0;
+    let index = -1;
+    let timeout;
 
     const slide = (side, isTimer = true) => {
-        containers[index].classList.remove('active');
+        containers[index] && containers[index].classList.remove('active');
+
+        let prevIndex = index;
         index = side === 'right' ? index < containers.length - 1 ? index + 1 : 0 : index === 0 ? index = containers.length - 1 : index - 1;
         containers[index].classList.add('active');
+
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+            containers[prevIndex] && (containers[prevIndex].style.position = 'fixed');
+            containers[index].style.position = 'relative';
+        }, 300)
 
         if (!isTimer) {
             clearInterval(timer);
@@ -33,6 +42,7 @@ for (let slider of sliders) {
         }
     }
 
+    slide('right');
     let timer = setInterval(() => slide('right'), 3000);
 
     let left = slider.querySelector('.left');
@@ -90,19 +100,39 @@ phone.addEventListener('blur', setMask, false);
 phone.addEventListener('keydown', setMask, false);
 
 let contact = document.querySelector('.contact');
+let success_message = document.querySelector('.success-message-wrapper');
 
 contact.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    let name = contact.querySelector('[name="name"]').value;
-    let phone = contact.querySelector('[name="phone"]').value;
-    let email = contact.querySelector('[name="email"]').value;
-    let comment = contact.querySelector('[name="comment"]').value;
+    let name = contact.querySelector('[name="name"]');
+    let phone = contact.querySelector('[name="phone"]');
+    let email = contact.querySelector('[name="email"]');
+    let comment = contact.querySelector('[name="comment"]');
 
     fetch('vendor/action/onMail.php', {
         method: 'post',
-        body: JSON.stringify({name, phone, email, comment}),
+        body: JSON.stringify({name: name.value, phone: phone.value, email: email.value, comment: comment.value}),
     }).then((res) => {
-        console.log(res)
+        return res.json();
+    }).then((data) => {
+        if (data.message) {
+            success_message.classList.add('active');
+
+            const setSuccess = () => {
+                success_message.classList.remove('active');
+                name.value = '';
+                phone.value = '';
+                email.value = '';
+                comment.value = '';
+            }
+
+            let timeout = setTimeout(setSuccess, 1000)
+
+            success_message.addEventListener('click', () => {
+                setSuccess();
+                clearTimeout(timeout);
+            })
+        }
     });
 });
