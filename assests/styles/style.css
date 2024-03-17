@@ -338,7 +338,7 @@ h4 {
 .team .slider {
     display: flex;
     justify-content: space-between;
-    gap: 8px;
+    gap: 20px;
 }
 
 .team .employee {
@@ -348,7 +348,7 @@ h4 {
 }
 
 .team .slider .employee {
-    max-width: calc((100% - 16px) / 3);
+    max-width: calc((100% - 40px) / 3);
 }
 
 .team .employee img {
@@ -373,7 +373,7 @@ h4 {
 
 .team .container {
     width: 100%;
-    max-width: 754px;
+    max-width: 730px;
     justify-content: space-between;
     gap: 8px;
 }
